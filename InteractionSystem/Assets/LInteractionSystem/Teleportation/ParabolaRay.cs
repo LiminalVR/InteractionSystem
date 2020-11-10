@@ -2,18 +2,17 @@
 
 namespace Liminal.SDK.InteractableSystem
 {
+    public abstract class RayBase : MonoBehaviour
+    {
+        public Vector3[] Positions { get; set; }
+    }
+
     /// <summary>
     /// Add as a child object to your Grabber, Hand or Controller.
     /// </summary>
-    [RequireComponent(typeof(LineRenderer))]
-    public class ParabolaRay : MonoBehaviour
+    public class ParabolaRay : RayBase
     {
-        public LineRenderer LineRenderer;
-
         public float Velocity = 5;
-
-        [Range(-90, 90)]
-        public float Angle = 45;
 
         [Range(2, 100)]
         public int Resolution;
@@ -22,38 +21,27 @@ namespace Liminal.SDK.InteractableSystem
         private float _maxDistance;
         private float _height = 2;
 
-        private float _gravity;
         private float _radianAngle;
+        private float _angle = 45;
 
-        private void Awake()
-        {
-            LineRenderer = GetComponent<LineRenderer>();
-            _gravity = Mathf.Abs(Physics2D.gravity.y); // 9.81
-        }
+        private const float _gravity = 10;
 
         private void Start()
         {
-            RenderArc();
+            Positions = new Vector3[Resolution + 1];
         }
 
         private void Update()
         {
             _height = transform.position.y;
-            Angle = -transform.eulerAngles.x;
+            _angle = -transform.eulerAngles.x;
 
-            RenderArc();
+            Positions = GetPoints();
         }
 
-        private void RenderArc()
+        private Vector3[] GetPoints()
         {
-            LineRenderer.SetVertexCount(Resolution + 1);
-            LineRenderer.SetPositions(CalculateArcArray());
-        }
-
-        private Vector3[] CalculateArcArray()
-        {
-            var arcArray = new Vector3[Resolution + 1];
-            _radianAngle = Mathf.Deg2Rad * Angle;
+            _radianAngle = Mathf.Deg2Rad * _angle;
             float a, b, c, discriminant;
 
             /*
@@ -76,10 +64,10 @@ namespace Liminal.SDK.InteractableSystem
             for (var i = 0; i <= Resolution; i++)
             {
                 var t = (float)i * _timeToReachFloor / (float)Resolution; // We add time here so our line t matches our equation time
-                arcArray[i] = CalculateArcPoint(t, _maxDistance);
+                Positions[i] = CalculateArcPoint(t, _maxDistance);
             }
 
-            return arcArray;
+            return Positions;
         }
 
         private Vector3 CalculateArcPoint(float t, float maxDistance)
@@ -92,21 +80,6 @@ namespace Liminal.SDK.InteractableSystem
             finalPosition.y = y;
 
             return finalPosition;
-        }
-
-        public float AngleInPlane(Transform from, Vector3 to, Vector3 planeNormal)
-        {
-            Vector3 dir = to - from.position;
-
-            Vector3 p1 = Project(dir, planeNormal);
-            Vector3 p2 = Project(from.forward, planeNormal);
-
-            return Vector3.Angle(p1, p2);
-        }
-
-        public Vector3 Project(Vector3 v, Vector3 onto)
-        {
-            return v - (Vector3.Dot(v, onto) / Vector3.Dot(onto, onto)) * onto;
         }
     }
 }
