@@ -69,7 +69,7 @@ namespace Liminal.SDK.InteractableSystem
             }
 
             // Right Mouse click to UnGrab atm.
-            if (UnityEngine.Input.GetMouseButtonDown(1))
+            if (UnityEngine.Input.GetMouseButtonDown(2))
             {
                 Grabber.UnGrab(ignorePolicy: true);
             }

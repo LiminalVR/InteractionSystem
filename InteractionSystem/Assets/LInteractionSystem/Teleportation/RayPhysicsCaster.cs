@@ -13,6 +13,8 @@ namespace Liminal.SDK.InteractableSystem
         public RayCastUnityEvent OnRaycastHitFound;
         public LayerMask Mask;
 
+        public RaycastHit Hit { get; set; }
+
         private int _hitIndex;
 
         private void Update()
@@ -30,6 +32,7 @@ namespace Liminal.SDK.InteractableSystem
                     continue;
 
                 _hitIndex = i;
+                Hit = hit;
                 OnRaycastHitFound.Invoke(hit);
 
                 intersected++;

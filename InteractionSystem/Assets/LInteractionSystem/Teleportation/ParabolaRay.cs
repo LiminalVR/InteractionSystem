@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Liminal.SDK.InteractableSystem
 {
@@ -82,4 +83,10 @@ namespace Liminal.SDK.InteractableSystem
             return finalPosition;
         }
     }
+    
+    // I want to keep the ray separated from the Teleport System in the case we can use it for other things. 
+    // This means we should have a button that just turns the ray on and off else where.
+
+    // State Controller -> Turns on Ray
+    // Teleport System -> Reads from Ray
 }
