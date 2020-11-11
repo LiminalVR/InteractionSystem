@@ -798,6 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91dde8fa4be59f44fbfe39f4c15a62d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ray: {fileID: 1759906405}
   RayDisplay: {fileID: 1759906406}
   RayPhysicsCaster: {fileID: 668410817}
   Target: {fileID: 152793984}
@@ -4216,6 +4217,18 @@ Transform:
   m_Father: {fileID: 2060501465}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &881870027 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6835030585117012041, guid: 50fb210b6a5502e40a76516f62a65f10,
+    type: 3}
+  m_PrefabInstance: {fileID: 6835030586814706290}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a238247467e1d24596b178f202c355e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &895526537
 GameObject:
   m_ObjectHideFlags: 0
@@ -7738,6 +7751,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6835030586814706290}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1759906405 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6835030586274484684, guid: 50fb210b6a5502e40a76516f62a65f10,
+    type: 3}
+  m_PrefabInstance: {fileID: 6835030586814706290}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759906403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1166e4eaee2053d4596d4e643dd0c5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1759906406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9494,6 +9519,11 @@ PrefabInstance:
       propertyPath: Velocity
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6835030586274484684, guid: 50fb210b6a5502e40a76516f62a65f10,
+        type: 3}
+      propertyPath: Grabber
+      value: 
+      objectReference: {fileID: 881870027}
     - target: {fileID: 6835030586274484685, guid: 50fb210b6a5502e40a76516f62a65f10,
         type: 3}
       propertyPath: m_Parameters.widthMultiplier

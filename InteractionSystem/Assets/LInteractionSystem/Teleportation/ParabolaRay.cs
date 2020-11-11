@@ -5,6 +5,8 @@ namespace Liminal.SDK.InteractableSystem
 {
     public abstract class RayBase : MonoBehaviour
     {
+        public Grabber Grabber;
+
         public Vector3[] Positions { get; set; }
     }
 

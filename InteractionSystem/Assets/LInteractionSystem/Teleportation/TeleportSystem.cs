@@ -10,11 +10,13 @@ namespace Liminal.SDK.InteractableSystem
     /// </summary>
     public class TeleportSystem : MonoBehaviour
     {
+        public RayBase Ray;
         public RayDisplay RayDisplay;
         public RayPhysicsCaster RayPhysicsCaster;
         public Transform Target;
 
         public string TeleportLayer = "Teleportable";
+        public bool DeactivateWhenGrabbing = true;
 
         public TeleportUnityEvent OnValueChanged;
         public TeleportUnityEvent OnInvalidPosition;
@@ -34,15 +36,20 @@ namespace Liminal.SDK.InteractableSystem
 
         private void Update()
         {
-            if (UnityEngine.Input.GetMouseButton(1))
-            {
-                if (!RayDisplay.Active)
-                    OnRayActivated();
-            }
+            if (DeactivateWhenGrabbing && Ray.Grabber.GrabbedInteractables.Count > 0)
+                RayDisplay.Active = false;
             else
             {
-                if (RayDisplay.Active)
-                    OnRayDeactivated();
+                if (UnityEngine.Input.GetMouseButton(1))
+                {
+                    if (!RayDisplay.Active)
+                        OnRayActivated();
+                }
+                else
+                {
+                    if (RayDisplay.Active)
+                        OnRayDeactivated();
+                }
             }
 
             var found = GetNavHit(out var navHit);
