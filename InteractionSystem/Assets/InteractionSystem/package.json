@@ -1,9 +1,9 @@
 {
-    "name": "com.liminal.sdk",
-    "displayName": "Liminal",
+    "name": "com.liminal.interactionsystem",
+    "displayName": "Liminal Interaction System",
     "version": "2.0.0",
     "unity": "2019.3",
-    "description": "Liminal SDK",
+    "description": "Liminal Interaction System",
     "keywords": [
         "sdk",
         "unity"
