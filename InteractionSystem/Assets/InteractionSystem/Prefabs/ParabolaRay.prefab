@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 1186701699627548910}
   - component: {fileID: 1186701699627548816}
   - component: {fileID: 1186701699627548911}
+  - component: {fileID: 2775024865851405240}
   m_Layer: 0
   m_Name: ParabolaRay
   m_TagString: Untagged
@@ -190,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1166e4eaee2053d4596d4e643dd0c5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Grabber: {fileID: 0}
   Velocity: 7
   Resolution: 10
 --- !u!114 &1186701699627548911
@@ -212,3 +214,16 @@ MonoBehaviour:
   Mask:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!114 &2775024865851405240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186701699627548819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9abe43b9797944ca432ae252193e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 0

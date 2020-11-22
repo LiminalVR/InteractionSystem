@@ -18,14 +18,14 @@ namespace Liminal.SDK.InteractableSystem
         public Trigger OnNearTrigger;
         public Trigger OnTouchTrigger;
 
-        public Transform Point => PointProvider?.Point;
-        public GrabPointProvider PointProvider { get; private set; }
-
-        public Grabber Grabber { get; set; }
-
+        [Header("Events")]
         public GrabUnityEvent OnGrabbed;
         public GrabUnityEvent OnGrabbing;
         public GrabUnityEvent OnUnGrabbed;
+
+        public Transform Point => PointProvider?.Point;
+        public GrabPointProvider PointProvider { get; private set; }
+        public Grabber Grabber { get; set; }
 
         public virtual void Grabbed(Grabber grabber)
         {
@@ -55,7 +55,8 @@ namespace Liminal.SDK.InteractableSystem
     public enum EUpdateMode
     {
         Update,
-        FixedUpdate
+        FixedUpdate,
+        LateUpdate
     }
 
     [Flags]

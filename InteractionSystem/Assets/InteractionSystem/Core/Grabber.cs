@@ -1,26 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Valve.VR.InteractionSystem;
 
 namespace Liminal.SDK.InteractableSystem
 {
     public class Grabber : MonoBehaviour
     {
         public GameObject[] Models;
-
-        public List<GrabbableBase> Interactables;
-        public List<GrabbableBase> GrabbedInteractables;
         public List<GrabPointProvider> GrabPointProviders;
-
         public Trigger GrabTrigger;
         public VelocityEstimator VelocityEstimator;
-
         public LayerMask Ignore;
-
         public Dictionary<GrabPointMarker, GrabPointProvider> GrabPointProvidersTable { get; private set; } = new Dictionary<GrabPointMarker, GrabPointProvider>();
-
         public HashSet<GrabbableBase> GrabbedInteractablesTable = new HashSet<GrabbableBase>();
+
+        private List<GrabbableBase> Interactables = new List<GrabbableBase>();
+        private List<GrabbableBase> GrabbedInteractables = new List<GrabbableBase>();
 
         public bool Grabbing => GrabbedInteractables.Count != 0;
 
@@ -57,6 +52,15 @@ namespace Liminal.SDK.InteractableSystem
             }
         }
 
+        private void LateUpdate()
+        {
+            foreach (var grabbedInteractable in GrabbedInteractables)
+            {
+                if (grabbedInteractable.UpdateMode == EUpdateMode.LateUpdate)
+                    grabbedInteractable.Grabbing(this);
+            }
+        }
+
         /// <summary>
         /// Attempt to grab any grabbables within GrabTrigger.
         /// </summary>
@@ -80,30 +84,30 @@ namespace Liminal.SDK.InteractableSystem
             }
         }
 
-        public void Grabbed(GrabbableBase interactable)
+        public void Grabbed(GrabbableBase toGrab)
         {
-            if (GrabbedInteractablesTable.Contains(interactable))
+            if (GrabbedInteractablesTable.Contains(toGrab))
                 return;
 
-            if (interactable.GrabFlags.HasFlag(EGrabFlags.UnGrabOthers))
+            if (toGrab.GrabFlags.HasFlag(EGrabFlags.UnGrabOthers))
             {
                 for (var i = GrabbedInteractables.Count - 1; i >= 0; i--)
                 {
-                    var grabbed = GrabbedInteractables[i];
-                    if (ReferenceEquals(grabbed, interactable))
+                    var grabbable = GrabbedInteractables[i];
+                    if (ReferenceEquals(grabbable, toGrab))
                         continue;
 
-                    UnGrabbed(grabbed);
+                    UnGrabbed(grabbable);
                 }
             }
 
-            interactable.Grabber = this;
-            interactable.Grabbed(this);
+            toGrab.Grabber = this;
+            toGrab.Grabbed(this);
 
-            GrabbedInteractables.Add(interactable);
-            GrabbedInteractablesTable.Add(interactable);
+            GrabbedInteractables.Add(toGrab);
+            GrabbedInteractablesTable.Add(toGrab);
 
-            if (interactable.GrabFlags.HasFlag(EGrabFlags.HideControllers))
+            if (toGrab.GrabFlags.HasFlag(EGrabFlags.HideControllers))
             {
                 foreach (var model in Models)
                     model.gameObject.SetActive(false);

@@ -1,6 +1,4 @@
-﻿using Liminal.SDK.VR;
-using Liminal.SDK.VR.Avatars;
-using Liminal.SDK.VR.Input;
+﻿using Liminal.SDK.VR.Avatars;
 using UnityEngine;
 
 namespace Liminal.SDK.InteractableSystem
@@ -11,18 +9,25 @@ namespace Liminal.SDK.InteractableSystem
     public class VRHandGrabber : MonoBehaviour
     {
         public Grabber Grabber;
-        public VRAvatarHand Hand;
+        public RayBase Ray;
 
+        [Header("Settings")]
+        public EHandType HandType;
         public Vector3 Offset;
+        public LayerMask Mask;
 
-        [Header("Automatically place grabber at collision")]
+        [Header("Style Settings")]
         public bool PositionOnCollide;
         public bool RaycastFromPointer;
-        public LayerMask Mask;
 
         private RaycastHit _lastHit;
 
-        private void Update()
+        public IVRAvatarHand Hand => HandType == EHandType.Primary ? VRAvatar.Active.PrimaryHand : VRAvatar.Active.SecondaryHand;
+        public InteractionCommandSystem InteractionCommandSystem => VRInteractionRig.Instance.InteractionCommandSystem;
+        public CommandBase GrabCommand => InteractionCommandSystem.GetSet(HandType).Grab;
+        public CommandBase DropCommand => InteractionCommandSystem.GetSet(HandType).Drop;
+
+        private void LateUpdate()
         {
             if (!Hand.IsActive)
             {
@@ -35,7 +40,7 @@ namespace Liminal.SDK.InteractableSystem
             if (Hand.InputDevice?.Pointer == null)
                 return;
 
-            var origin = RaycastFromPointer ? Hand.InputDevice.Pointer.Transform : Hand.transform;
+            var origin = RaycastFromPointer ? Hand.InputDevice.Pointer.Transform : Hand.Transform;
             if (origin == null)
                 return;
 
@@ -58,21 +63,14 @@ namespace Liminal.SDK.InteractableSystem
                     _lastHit = hit;
             }
 
-            if (VRDevice.Device.GetButtonDown(VRButton.One))
-            {
+            if (GrabCommand.Down)
                 Grabber.Grab();
-            }
 
-            if (VRDevice.Device.GetButtonUp(VRButton.One))
-            {
+            if (GrabCommand.Up)
                 Grabber.UnGrab();
-            }
 
-            // Right Mouse click to UnGrab atm.
-            if (UnityEngine.Input.GetMouseButtonDown(2))
-            {
+            if (DropCommand.Down)
                 Grabber.UnGrab(ignorePolicy: true);
-            }
         }
     }
 }
