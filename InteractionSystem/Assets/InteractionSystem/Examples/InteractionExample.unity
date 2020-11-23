@@ -2121,7 +2121,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 1
   m_VoxelSize: 0.024
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: b5ac6780d8ad9b044bbbdfc70cb50bea, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: a7da844f88dc27444a3b1fdbe11857f5, type: 2}
 --- !u!65 &394054533
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8560,7 +8560,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 8b2369d7e3089764685ff0be3cdd15ac, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 58b3c885373e99c49aac7453f669e5fd, type: 2}
 --- !u!1 &2066379526
 GameObject:
   m_ObjectHideFlags: 0
