@@ -1,0 +1,23 @@
+{
+    "name": "InteractionSystem",
+    "references": [
+        "LiminalSdk",
+        "SteamVR",
+        "Platform",
+        "SteamVR_Actions",
+        "SteamVR_Input_Editor",
+        "SteamVR_Editor",
+        "SteamVR_Windows_EditorHelper"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Liminal.SDK.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
