@@ -9193,5 +9193,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[VRInteractionRig]'
       objectReference: {fileID: 0}
+    - target: {fileID: 2187313320095826358, guid: f7821135f7a7fe34b87eac662154c622,
+        type: 3}
+      propertyPath: m_EventMask.m_Bits
+      value: 567
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187313320484535588, guid: f7821135f7a7fe34b87eac662154c622,
+        type: 3}
+      propertyPath: InteractableLayers.m_Bits
+      value: 567
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7821135f7a7fe34b87eac662154c622, type: 3}

@@ -87,6 +87,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[VRInteractionRig]'
       objectReference: {fileID: 0}
+    - target: {fileID: 9081779545453451444, guid: 99a7340e3b73500469e94efdea22190d,
+        type: 3}
+      propertyPath: InteractableLayers.m_Bits
+      value: 567
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081779546676945958, guid: 99a7340e3b73500469e94efdea22190d,
+        type: 3}
+      propertyPath: m_EventMask.m_Bits
+      value: 567
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99a7340e3b73500469e94efdea22190d, type: 3}
 --- !u!114 &3902506114998954780 stripped
