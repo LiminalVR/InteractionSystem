@@ -22,6 +22,11 @@ PrefabInstance:
       propertyPath: Ray
       value: 
       objectReference: {fileID: 3902506114998954780}
+    - target: {fileID: 8171639950506145924, guid: 99a7340e3b73500469e94efdea22190d,
+        type: 3}
+      propertyPath: HandType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8221551126798876290, guid: 99a7340e3b73500469e94efdea22190d,
         type: 3}
       propertyPath: m_LocalPosition.x
