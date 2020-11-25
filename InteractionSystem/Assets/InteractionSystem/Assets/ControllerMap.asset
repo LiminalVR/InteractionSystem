@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdcbcad293d1d1149b3566e179b44f66, type: 3}
   m_Name: ControllerMap
   m_EditorClassIdentifier: 
-  GrabButtons: 00000000
+  GrabButtons: 0000000002000000
   DropButtons: 04000000
   TeleportButtons: 0100000005000000

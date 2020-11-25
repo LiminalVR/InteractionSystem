@@ -3697,8 +3697,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8066ed3b2e9e4c64f9c11142d910e9c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildType: 1
-  EditorType: 1
+  BuildType: 2
+  EditorType: 2
 --- !u!114 &784591224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9204,6 +9204,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: '[VRInteractionRig]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907863381145286927, guid: f7821135f7a7fe34b87eac662154c622,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5945697620897404466, guid: f7821135f7a7fe34b87eac662154c622,
         type: 3}
