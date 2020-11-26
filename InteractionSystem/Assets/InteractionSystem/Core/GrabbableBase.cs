@@ -22,6 +22,7 @@ namespace Liminal.SDK.InteractableSystem
         public GrabUnityEvent OnGrabbed;
         public GrabUnityEvent OnGrabbing;
         public GrabUnityEvent OnUnGrabbed;
+        public GrabUnityEvent OnUse;
 
         public Transform Point => PointProvider?.Point;
         public GrabPointProvider PointProvider { get; private set; }
@@ -49,6 +50,11 @@ namespace Liminal.SDK.InteractableSystem
         {
             OnUnGrabbed.Invoke(grabber);
             PointProvider = null;
+        }
+
+        public virtual void Use(Grabber grabber)
+        {
+            OnUse.Invoke(grabber);
         }
     }
 

@@ -7,6 +7,7 @@ namespace Liminal.SDK.InteractableSystem
     public class InteractionMap : ScriptableObject
     {
         public List<EButtonType> GrabButtons = new List<EButtonType>();
+        public List<EButtonType> UseButtons = new List<EButtonType>();
         public List<EButtonType> DropButtons = new List<EButtonType>();
         public List<EButtonType> TeleportButtons = new List<EButtonType>();
     }

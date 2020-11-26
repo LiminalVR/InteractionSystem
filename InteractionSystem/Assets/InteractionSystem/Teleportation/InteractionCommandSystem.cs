@@ -34,6 +34,7 @@ namespace Liminal.SDK.InteractableSystem
     public class InteractionCommandSet
     {
         public CommandBase Grab = new CommandBase();
+        public CommandBase Use = new CommandBase();
         public CommandBase Drop = new CommandBase();
         public CommandBase Teleport = new CommandBase();
     }

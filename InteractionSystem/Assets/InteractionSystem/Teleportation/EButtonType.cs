@@ -5,6 +5,10 @@
         One,
         Two,
         Three,
+        Four,
+        Trigger,
+        Touch,
+        Back,
         LeftMouse,
         MiddleMouse,
         RightMouse

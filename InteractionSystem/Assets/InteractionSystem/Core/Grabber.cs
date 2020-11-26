@@ -71,6 +71,15 @@ namespace Liminal.SDK.InteractableSystem
         }
 
         /// <summary>
+        /// Attempt to Use any grabbables Being Held
+        /// </summary>
+        public void Use()
+        {
+            foreach (var interactable in GrabbedInteractables)
+                interactable.Use(this);
+        }
+
+        /// <summary>
         /// Attempt to ungrab all holding grabbables.
         /// </summary>
         public void UnGrab(bool ignorePolicy = false)

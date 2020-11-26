@@ -25,6 +25,9 @@ namespace Liminal.SDK.InteractableSystem
             ProcessInput(device.PrimaryInputDevice, PrimaryMap.GrabButtons, Primary.Grab);
             ProcessInput(device.SecondaryInputDevice, PrimaryMap.GrabButtons, Secondary.Grab);
 
+            ProcessInput(device.PrimaryInputDevice, PrimaryMap.UseButtons, Primary.Use);
+            ProcessInput(device.SecondaryInputDevice, PrimaryMap.UseButtons, Secondary.Use);
+
             ProcessInput(device.PrimaryInputDevice, PrimaryMap.DropButtons, Primary.Drop);
             ProcessInput(device.SecondaryInputDevice, SecondaryMap.DropButtons, Primary.Drop);
         }

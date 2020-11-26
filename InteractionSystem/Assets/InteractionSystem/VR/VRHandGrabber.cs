@@ -25,6 +25,7 @@ namespace Liminal.SDK.InteractableSystem
         public IVRAvatarHand Hand => HandType == EHandType.Primary ? VRAvatar.Active.PrimaryHand : VRAvatar.Active.SecondaryHand;
         public InteractionCommandSystem InteractionCommandSystem => VRInteractionRig.Instance.InteractionCommandSystem;
         public CommandBase GrabCommand => InteractionCommandSystem.GetSet(HandType).Grab;
+        public CommandBase UseCommand => InteractionCommandSystem.GetSet(HandType).Use;
         public CommandBase DropCommand => InteractionCommandSystem.GetSet(HandType).Drop;
 
         private void LateUpdate()
@@ -71,6 +72,9 @@ namespace Liminal.SDK.InteractableSystem
 
             if (DropCommand.Down)
                 Grabber.UnGrab(ignorePolicy: true);
+
+            if (UseCommand.Down)
+                Grabber.Use();
         }
     }
 }
