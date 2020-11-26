@@ -23,13 +23,13 @@ namespace Liminal.SDK.InteractableSystem
             ProcessInput(device.SecondaryInputDevice, SecondaryMap.TeleportButtons, Secondary.Teleport);
 
             ProcessInput(device.PrimaryInputDevice, PrimaryMap.GrabButtons, Primary.Grab);
-            ProcessInput(device.SecondaryInputDevice, PrimaryMap.GrabButtons, Secondary.Grab);
+            ProcessInput(device.SecondaryInputDevice, SecondaryMap.GrabButtons, Secondary.Grab);
 
             ProcessInput(device.PrimaryInputDevice, PrimaryMap.UseButtons, Primary.Use);
-            ProcessInput(device.SecondaryInputDevice, PrimaryMap.UseButtons, Secondary.Use);
+            ProcessInput(device.SecondaryInputDevice, SecondaryMap.UseButtons, Secondary.Use);
 
             ProcessInput(device.PrimaryInputDevice, PrimaryMap.DropButtons, Primary.Drop);
-            ProcessInput(device.SecondaryInputDevice, SecondaryMap.DropButtons, Primary.Drop);
+            ProcessInput(device.SecondaryInputDevice, SecondaryMap.DropButtons, Secondary.Drop);
         }
 
         public void ProcessInput(IVRInputDevice device, List<EButtonType> buttonTypes, CommandBase command)
@@ -100,6 +100,14 @@ namespace Liminal.SDK.InteractableSystem
                     return VRButton.Two;
                 case EButtonType.Three:
                     return VRButton.Three;
+                case EButtonType.Four:
+                    return VRButton.Four;
+                case EButtonType.Trigger:
+                    return VRButton.Trigger;
+                case EButtonType.Touch:
+                    return VRButton.Touch;
+                case EButtonType.Back:
+                    return VRButton.Back;
                 default:
                     return "None";
             }
