@@ -64,6 +64,10 @@ namespace Liminal.SDK.InteractableSystem
                     _lastHit = hit;
             }
 
+            //stops users picking up an object and using it on the same frame.
+            if (UseCommand.Down)
+                Grabber.Use();
+
             if (GrabCommand.Down)
                 Grabber.Grab();
 
@@ -73,8 +77,6 @@ namespace Liminal.SDK.InteractableSystem
             if (DropCommand.Down)
                 Grabber.UnGrab(ignorePolicy: true);
 
-            if (UseCommand.Down)
-                Grabber.Use();
         }
     }
 }
