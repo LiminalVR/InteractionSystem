@@ -54,7 +54,8 @@ namespace Liminal.SDK.InteractableSystem
 
         public virtual void Use(Grabber grabber)
         {
-            OnUse.Invoke(grabber);
+            if (PointProvider != null)
+                OnUse.Invoke(grabber);
         }
     }
 
