@@ -27,7 +27,7 @@ namespace App.StateMachine
                 if (!t.gameObject.activeInHierarchy || t == transform)
                     continue;
 
-                var state = t.GetComponent<SequenceState>();
+                var state = t.GetComponent<ISequence>();
 
                 if (state != null)
                 {
