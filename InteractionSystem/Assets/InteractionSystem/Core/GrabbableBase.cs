@@ -28,9 +28,12 @@ namespace Liminal.SDK.InteractableSystem
         public GrabPointProvider PointProvider { get; private set; }
         public Grabber Grabber { get; set; }
 
+        public bool IsGrabbing { get; private set; }
+
         public virtual void Grabbed(Grabber grabber)
         {
             PointProvider = grabber.GrabPointProvidersTable[GrabPointMarker];
+            IsGrabbing = true;
 
             if (GrabFlags.HasFlag(EGrabFlags.SnapPosition))
                 transform.position = Point.position;
@@ -50,11 +53,12 @@ namespace Liminal.SDK.InteractableSystem
         {
             OnUnGrabbed.Invoke(grabber);
             PointProvider = null;
+            IsGrabbing = false;
         }
 
         public virtual void Use(Grabber grabber)
         {
-            if (PointProvider != null)
+            if (IsGrabbing)
                 OnUse.Invoke(grabber);
         }
     }
