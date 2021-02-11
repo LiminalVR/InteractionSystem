@@ -199,6 +199,9 @@ MonoBehaviour:
   OnUnGrabbed:
     m_PersistentCalls:
       m_Calls: []
+  OnUse:
+    m_PersistentCalls:
+      m_Calls: []
   Sync: {fileID: 6783595}
 --- !u!114 &6783595
 MonoBehaviour:
@@ -1319,6 +1322,9 @@ MonoBehaviour:
   OnUnGrabbed:
     m_PersistentCalls:
       m_Calls: []
+  OnUse:
+    m_PersistentCalls:
+      m_Calls: []
   Sync: {fileID: 261527606}
 --- !u!1 &261778252
 GameObject:
@@ -1446,6 +1452,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnUnGrabbed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUse:
     m_PersistentCalls:
       m_Calls: []
   Sync: {fileID: 268612286}
@@ -2318,6 +2327,9 @@ MonoBehaviour:
   OnUnGrabbed:
     m_PersistentCalls:
       m_Calls: []
+  OnUse:
+    m_PersistentCalls:
+      m_Calls: []
   Sync: {fileID: 443964737}
 --- !u!1 &456281900
 GameObject:
@@ -2397,6 +2409,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnUnGrabbed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUse:
     m_PersistentCalls:
       m_Calls: []
   OnMove:
@@ -2747,7 +2762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpdateMode: 0
-  GrabFlags: -1
+  GrabFlags: 30
   GrabPointMarker: {fileID: 11400000, guid: e30fb40c8d40815489063370af76b48a, type: 2}
   OnNearTrigger: {fileID: 1564334808}
   OnTouchTrigger: {fileID: 1076094458}
@@ -2758,6 +2773,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnUnGrabbed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUse:
     m_PersistentCalls:
       m_Calls: []
   Sync: {fileID: 496506472}
@@ -3168,6 +3186,9 @@ MonoBehaviour:
   OnUnGrabbed:
     m_PersistentCalls:
       m_Calls: []
+  OnUse:
+    m_PersistentCalls:
+      m_Calls: []
   Sync: {fileID: 604764246}
 --- !u!114 &604764246
 MonoBehaviour:
@@ -3368,6 +3389,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713821120}
   m_CullTransparentMesh: 0
+--- !u!1 &740778299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2187313319465509980, guid: f7821135f7a7fe34b87eac662154c622,
+    type: 3}
+  m_PrefabInstance: {fileID: 1091589008401971424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &740778301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740778299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ef01119f7e2a84087c8d192ffc2699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PrimaryController: {fileID: 1256221364}
+  SecondaryController: {fileID: 1477770561}
+  ShowControllers: 0
 --- !u!1 &751410337
 GameObject:
   m_ObjectHideFlags: 0
@@ -3686,7 +3728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BuildType: 2
-  EditorType: 2
+  EditorType: 1
 --- !u!114 &784591224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4201,13 +4243,10 @@ MonoBehaviour:
   OnUnGrabbed:
     m_PersistentCalls:
       m_Calls: []
+  OnUse:
+    m_PersistentCalls:
+      m_Calls: []
   Sync: {fileID: 956662086}
---- !u!20 &990840681 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 2187313319540135221, guid: f7821135f7a7fe34b87eac662154c622,
-    type: 3}
-  m_PrefabInstance: {fileID: 1091589008401971424}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1029362128
 GameObject:
   m_ObjectHideFlags: 0
@@ -4964,6 +5003,12 @@ Transform:
   m_Father: {fileID: 261527604}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1256221364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2187313319838329978, guid: f7821135f7a7fe34b87eac662154c622,
+    type: 3}
+  m_PrefabInstance: {fileID: 1091589008401971424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1290145052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5533,7 +5578,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 990840681}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -5703,6 +5748,12 @@ Transform:
   m_Father: {fileID: 6783590}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1477770561 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1091589008286174025, guid: f7821135f7a7fe34b87eac662154c622,
+    type: 3}
+  m_PrefabInstance: {fileID: 1091589008401971424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1490845606
 GameObject:
   m_ObjectHideFlags: 0
@@ -5878,6 +5929,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnUnGrabbed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUse:
     m_PersistentCalls:
       m_Calls: []
   OnMove:
@@ -6315,7 +6369,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 990840681}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -7509,6 +7563,9 @@ MonoBehaviour:
   OnUnGrabbed:
     m_PersistentCalls:
       m_Calls: []
+  OnUse:
+    m_PersistentCalls:
+      m_Calls: []
   OnMove:
     m_PersistentCalls:
       m_Calls: []
@@ -8134,7 +8191,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 990840681}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -8251,7 +8308,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 990840681}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -8400,6 +8457,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnUnGrabbed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUse:
     m_PersistentCalls:
       m_Calls: []
   Sync: {fileID: 2047590463}
@@ -8796,6 +8856,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnUnGrabbed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUse:
     m_PersistentCalls:
       m_Calls: []
   OnMove:

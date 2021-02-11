@@ -566,8 +566,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414912}
+  - component: {fileID: 51166212942201048}
   m_Layer: 0
-  m_Name: CustomHandLeft 1
+  m_Name: CustomHandLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -588,6 +589,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &51166212942201048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b7e65854ace8f44b05c52c6e824354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HandType: 1
+  Animator: {fileID: 95022414942611548}
 --- !u!1 &144252
 GameObject:
   m_ObjectHideFlags: 0

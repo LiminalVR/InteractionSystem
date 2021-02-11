@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace Liminal.SDK.InteractableSystem
 {
@@ -13,6 +14,8 @@ namespace Liminal.SDK.InteractableSystem
         public LayerMask Ignore;
         public Dictionary<GrabPointMarker, GrabPointProvider> GrabPointProvidersTable { get; private set; } = new Dictionary<GrabPointMarker, GrabPointProvider>();
         public HashSet<GrabbableBase> GrabbedInteractablesTable = new HashSet<GrabbableBase>();
+
+        public bool StayGrabbed => GrabbedInteractables.Any(x => x.GrabFlags.HasFlag(EGrabFlags.StayAttachedToControllerWhenUnGrabbed));
 
         private List<GrabbableBase> Interactables = new List<GrabbableBase>();
         private List<GrabbableBase> GrabbedInteractables = new List<GrabbableBase>();
