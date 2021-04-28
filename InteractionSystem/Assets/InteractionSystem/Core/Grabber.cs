@@ -101,6 +101,12 @@ namespace Liminal.SDK.InteractableSystem
             if (GrabbedInteractablesTable.Contains(toGrab))
                 return;
 
+            if(!toGrab.GrabFlags.HasFlag(EGrabFlags.AllowGrabFromHand))
+            {
+                if (toGrab.Grabber != null)
+                    return;
+            }
+
             if (toGrab.GrabFlags.HasFlag(EGrabFlags.UnGrabOthers))
             {
                 for (var i = GrabbedInteractables.Count - 1; i >= 0; i--)

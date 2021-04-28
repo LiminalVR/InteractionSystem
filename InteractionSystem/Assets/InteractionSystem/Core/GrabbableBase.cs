@@ -78,6 +78,7 @@ namespace Liminal.SDK.InteractableSystem
         StayAttachedToControllerWhenUnGrabbed = 1 << 2,
         SnapPosition = 1 << 3,
         SnapRotation = 1 << 4,
+        AllowGrabFromHand = 1 << 5,
     }
 
     [Flags]
