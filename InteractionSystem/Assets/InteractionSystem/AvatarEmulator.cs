@@ -11,6 +11,7 @@ namespace Liminal.SDK.InteractableSystem
 
         private void Update()
         {
+#if UNITY_EDITOR
             var direction = Vector3.zero;
             direction.x = UnityEngine.Input.GetAxis("Horizontal");
             direction.z = UnityEngine.Input.GetAxis("Vertical");
@@ -21,6 +22,7 @@ namespace Liminal.SDK.InteractableSystem
                 direction.y = 0;
 
             transform.position += direction * Time.deltaTime * MoveSpeed;
+#endif
         }
     }
 }
