@@ -98,6 +98,9 @@ namespace Liminal.SDK.InteractableSystem
 
         public void Grabbed(GrabbableBase toGrab)
         {
+            if (!toGrab.Interactable)
+                return;
+
             if (GrabbedInteractablesTable.Contains(toGrab))
                 return;
 
