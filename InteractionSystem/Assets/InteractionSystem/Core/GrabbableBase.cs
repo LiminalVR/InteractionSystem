@@ -29,7 +29,7 @@ namespace Liminal.SDK.InteractableSystem
         public Grabber Grabber { get; set; }
 
         public bool IsGrabbing { get; private set; }
-        public bool Interactable;
+        public bool Interactable = true;
 
         public virtual void Grabbed(Grabber grabber)
         {
