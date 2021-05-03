@@ -62,6 +62,11 @@ namespace Liminal.SDK.InteractableSystem
             if (IsGrabbing)
                 OnUse.Invoke(grabber);
         }
+
+        public virtual void SetInteractable(bool state)
+        {
+            Interactable = state;
+        }
     }
 
     public enum EUpdateMode
